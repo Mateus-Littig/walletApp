@@ -38,6 +38,8 @@ export default {
       PURPLEDARK1: '#6E34B8',
       PURPLEDARK2: '#5B259F',
       PURPLEDARK3: '#2F1155',
+      PURPLEDARK4: '#130138',
+      PURPLECARD: '#5B259F',
 
       TONE: '#E6E3D6',
       AVATAR: '#E0E0E0',

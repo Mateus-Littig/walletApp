@@ -1,7 +1,7 @@
 import styled from "styled-components/native"
 
 export const Container = styled.View`
-  padding: 10px
+  padding: 20px
 `
 export const ContentHeader = styled.View`
   justify-content: center;
@@ -31,5 +31,18 @@ export const ContentBody = styled.View`
 
 `
 export const ContentFooter = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 11px;
+`
+export const TextFooter = styled.Text`
+  font-size: 16px;
+  font-family: ${({theme}) => theme.FONTS.POPPINSMEDIUM};
+  color: ${({theme}) => theme.COLORS.GRAY1};
+`
+export const TextRegister = styled.Text`
+  color: ${({theme}) => theme.COLORS.BLUE1};
+  font-size: 16px;
+  font-family: ${({theme}) => theme.FONTS.POPPINSMEDIUM};
 
 `

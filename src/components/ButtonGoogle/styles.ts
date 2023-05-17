@@ -8,7 +8,7 @@ export const Button = styled.TouchableOpacity`
   flex-direction: row;
   margin-bottom: 16px;
   border-radius: 15px;
-  background-color: ${({theme}) => theme.COLORS.GRAY6};
+  background-color: ${({theme}) => theme.COLORS.GRAY5};
   margin-right: 20px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
 `

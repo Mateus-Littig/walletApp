@@ -7,7 +7,7 @@ import React, {
   useEffect
 } from "react";
 import { useTheme } from "styled-components";
-import {  } from 'react-hook-form'
+import { useField } from "@unform/core";
 import { Ionicons} from "@expo/vector-icons"
 import { Container, InputText, IConContainer } from './styles'
 import { TextInputProps } from 'react-native'
@@ -33,22 +33,24 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
   value,
   containerStyle,
   ...rest
-}) => {
+}, ref) => {
   const theme = useTheme()
+  const inputElementRef = useRef<any>(null)
+
   const [hasError, setHasError] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
   const [isFilled, setIsFilled] = useState(false)
-  // const {
-  //   registerField,
-  //   fieldName,
-  //   defaultValue = '',
-  //   error
-  // } = useField(name)
-  // const inputValueRef = useRef<InputValueReference>({value: defaultValue});
+  const {
+    registerField,
+    fieldName,
+    defaultValue = '',
+    error
+  } = useField(name)
+  const inputValueRef = useRef<InputValueReference>({value: defaultValue});
 
-  // useEffect(() => {
-  //   setHasError( !!error)
-  // }, [error])
+  useEffect(() => {
+    setHasError( !!error)
+  }, [error])
 
   const handleFocus = useCallback(() => {
     setIsFocused(true)
@@ -59,6 +61,28 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
     setIsFocused(false)
     setIsFilled(!!inputValueRef.current.value)
   }, [])
+
+  useImperativeHandle(ref, () => ({
+    focus() {
+      inputElementRef.current.focus()
+    }
+  }))
+
+  useEffect(() => {
+    registerField<string>({
+      name: fieldName,
+      ref: inputElementRef.current,
+      path: 'value',
+      setValue(_, value) {
+        inputValueRef.current.value = value,
+        inputElementRef.current.setNativeProps({ text: value })
+      },
+      clearValue() {
+        inputValueRef.current.value = ''
+        inputElementRef.current.clear()
+      }
+    })
+  }, [registerField, fieldName])
 
   return (
     <Container style={containerStyle}>
@@ -79,10 +103,16 @@ export const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = ({
       </IConContainer>
 
       <InputText
+        ref={inputElementRef} // faz verificação de ref
+        onFocus={handleFocus} // se for verdadeiro é uma cor, se falso vermelho
+        onBlur={handleBlur}
         isFilled={isFilled}
         hasError={hasError}
         isFocused={isFocused}
+        defaultValue={defaultValue}
         placeholderTextColor={theme.COLORS.GRAY1}
+        onChangeText={(value) => inputValueRef.current.value = value}
+        {...rest}
       />
     </Container>
   )

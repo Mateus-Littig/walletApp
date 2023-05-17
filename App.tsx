@@ -1,10 +1,8 @@
 import React from "react"
 import { StatusBar } from "expo-status-bar"
 import AppLoading from "expo-app-loading"
-import { View } from 'react-native'
 import { ThemeProvider } from 'styled-components/native'
-import * as SplashScreen from 'expo-splash-screen';
-import Login from './src/screens/Login'
+import { Routes } from "./src/routes/index"
 
 import {
   useFonts,
@@ -17,7 +15,6 @@ import {
 
 import { DMSans_400Regular } from '@expo-google-fonts/dm-sans'
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display"
-import { Colors } from "react-native/Libraries/NewAppScreen"
 import Theme  from "./src/styles/theme"
 
 export default function App() {
@@ -37,13 +34,18 @@ export default function App() {
 
   return (
     <ThemeProvider theme={Theme}>
-      <StatusBar
-        style="dark" translucent backgroundColor="transparent"
-      />
-      <View>
-        <Login />
-      </View>
+        <StatusBar
+          style="dark" translucent backgroundColor="transparent"
+        />
+          <Routes />
     </ThemeProvider>
 
   )
 }
+
+// colocar img dentro da splash screen
+// "splash": {
+//   "image": "./assets/splash.png",
+//   "resizeMode": "contain",
+//   "backgroundColor": "#0F1941"
+// },
