@@ -17,12 +17,11 @@ interface IProfile {
   typeSettings?: boolean;
   typeService?: boolean;
   onPress?: () => void;
-  styles?: string;
 }
 
 export const OptionsSettings = ({
   name, iconLeft, iconRight, typeProfile, typeNotification,
-  typeWallet, typeSettings, typeService, onPress, styles
+  typeWallet, typeSettings, typeService, onPress
 }: IProfile) => {
   const navigation = useNavigation()
 
@@ -71,7 +70,6 @@ export const OptionsSettings = ({
           <ProfileName>{name}</ProfileName>
           <TouchableOpacity onPress={onPress}>
             <MaterialIcons
-              styles={styles}
               name='keyboard-arrow-right'
               size={25}
               color= {"#5B259F"}

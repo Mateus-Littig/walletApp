@@ -24,7 +24,7 @@ export default function Settings () {
           color= {"#5B259F"}
         />
       </TouchableOpacity> */}
-      <Header appName="Settings"/>
+      <Header appName="Settings" alignText/>
       <Container>
         <OptionsSettings iconLeft typeProfile name="Profile" onPress={handleGoProfile}/>
         <OptionsSettings iconLeft typeNotification name="Notifications"/>

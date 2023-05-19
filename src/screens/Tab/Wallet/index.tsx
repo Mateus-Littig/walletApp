@@ -24,8 +24,14 @@ export default function Wallet () {
   // }
   const navigation = useNavigation()
 
+  const handleGoTransfer = () => {
+    navigation.navigate('Transfer')
+  }
   const handleGoAddCard = () => {
     navigation.navigate('AddCard')
+  }
+  const handleGoViewAll = () => {
+    navigation.navigate('TransactionScreen')
   }
 
   return (
@@ -46,8 +52,8 @@ export default function Wallet () {
       </Content>
 
       <Body>
-        <TouchableOpacity>
-          <IconTransfer source={Transfer}/>
+        <TouchableOpacity onPress={handleGoTransfer}>
+          <IconTransfer source={Transfer} />
           <TitleIcon>Transfer</TitleIcon>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -85,7 +91,7 @@ export default function Wallet () {
           ListHeaderComponent={
             <ContentHeader>
                 <Title>Last Transaction</Title>
-                <ButtonViewAll>
+                <ButtonViewAll onPress={handleGoViewAll}>
                   <ButtonTitle>View all</ButtonTitle>
                 </ButtonViewAll>
               </ContentHeader>

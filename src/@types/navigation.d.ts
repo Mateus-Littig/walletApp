@@ -5,6 +5,9 @@ export declare global {
       SignUp: undefined;
       Profile: undefined;
       AddCard: undefined;
+      DetailsCard: undefined;
+      Transfer: undefined;
+      TransactionScreen: undefined;
     }
   }
 }

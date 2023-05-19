@@ -51,10 +51,9 @@ export const ElipseGr = styled.Image`
   left: 35px;
 `
 export const Body = styled.View`
+  width: 90%;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 41px;
+  margin-top: 40px;
   gap: 10px;
 `
 export const IconTransfer = styled.Image`

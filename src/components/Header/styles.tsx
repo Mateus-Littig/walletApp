@@ -3,15 +3,16 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   width: 100%;
   padding: 15px;
-  margin-top: 25px;
+  margin-top: 15px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 `
-export const ContentHeader = styled.View`
+export const ContentHeader = styled.View<{alignText?: boolean}>`
   justify-content: center;
   padding: 10px;
-  margin-left: 15px;
+  align-items: ${({ alignText }) => alignText ? 'center' : 'flex-start'};
+  width: ${({ alignText }) => alignText ? '100%' : '80%'};
 `
 export const Avatar = styled.Image`
   width: 56px;
