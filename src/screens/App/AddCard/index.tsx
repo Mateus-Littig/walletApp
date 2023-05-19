@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { GoBack } from '../../../components/GoBack';
 import {
@@ -17,7 +17,7 @@ export const AddCard = () => {
     <>
       <GoBack />
       <Container>
-        <TouchableOpacity onPress={handleGoDetailsCard}>
+        <Pressable onPress={handleGoDetailsCard}>
           <ViewTitle>
             <Title>Add Card</Title>
           </ViewTitle>
@@ -34,7 +34,7 @@ export const AddCard = () => {
           <ViewFooter>
             <TextAddNew>Add a new card{'\n'}on your wallet for easy life</TextAddNew>
           </ViewFooter>
-        </TouchableOpacity>
+        </Pressable>
       </Container>
     </>
   );

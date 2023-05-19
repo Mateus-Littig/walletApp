@@ -23,24 +23,48 @@ export const Transfer = () => {
         </ViewMabank>
 
         <ViewValue>
-          <Number>1</Number>
-          <Number>2</Number>
-          <Number>3</Number>
+          <TouchableOpacity>
+            <Number>1</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>2</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>3</Number>
+          </TouchableOpacity>
         </ViewValue>
         <ViewValue>
-          <Number>4</Number>
-          <Number>5</Number>
-          <Number>6</Number>
+          <TouchableOpacity>
+            <Number>4</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>5</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>6</Number>
+          </TouchableOpacity>
         </ViewValue>
         <ViewValue>
-          <Number>7</Number>
-          <Number>8</Number>
-          <Number>9</Number>
+          <TouchableOpacity>
+            <Number>7</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>8</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>9</Number>
+          </TouchableOpacity>
         </ViewValue>
         <ViewValue>
-          <Number>00</Number>
-          <Number>0</Number>
-          <Ionicons name='md-close-circle-outline' size={32} color= {"#5B259F"}/>
+          <TouchableOpacity>
+            <Number>00</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Number>0</Number>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons name='md-close-circle-outline' size={32} color= {"#5B259F"}/>
+          </TouchableOpacity>
         </ViewValue>
 
         <ViewButton>
