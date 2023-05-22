@@ -15,6 +15,10 @@ export default function SignUp () {
   const {COLORS} = useTheme();
   const navigation = useNavigation()
 
+
+  const handleTabRoutes = () => {
+    navigation.navigate('TabRoutes')
+  }
   const handleLogin = () => {
     navigation.navigate('Login')
   }
@@ -62,7 +66,7 @@ export default function SignUp () {
 
           <ButtonPerson
             title="Register"
-            onPress={() => {}}
+            onPress={handleTabRoutes}
             // variant="primary"
           />
         </ContentBody>

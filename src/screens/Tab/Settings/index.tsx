@@ -11,6 +11,10 @@ import { Ionicons } from "@expo/vector-icons";
 export default function Settings () {
   const navigation = useNavigation()
 
+  const handleLogin = () => {
+    navigation.navigate('Login')
+  }
+
   const handleGoProfile = () => {
     navigation.navigate('Profile')
   }
@@ -32,7 +36,7 @@ export default function Settings () {
         <OptionsSettings iconLeft typeSettings name="Login Settings"/>
         <OptionsSettings iconLeft typeService name="Service Center"/>
         <ViewFooter>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleLogin}>
             <Ionicons
               name="log-out-outline"
               size={38}

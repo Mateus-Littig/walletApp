@@ -14,7 +14,9 @@ import {
 export default function Login () {
   const {COLORS} = useTheme();
   const navigation = useNavigation()
-
+  const handleTabRoutes = () => {
+    navigation.navigate('TabRoutes')
+  }
   const handleSignUp = () => {
     navigation.navigate('SignUp')
   }
@@ -54,7 +56,7 @@ export default function Login () {
 
           <ButtonPerson
             title="Login"
-            onPress={() => {}}
+            onPress={handleTabRoutes}
             // variant="primary"
           />
         </ContentBody>

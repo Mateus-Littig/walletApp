@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { AntDesign, Octicons } from '@expo/vector-icons';
 import { GoBack } from '../../../components/GoBack';
 import { OptionsSettings } from '../../../components/Settings';
@@ -9,6 +10,13 @@ import {
 } from './styles';
 
 export const Profile = () => {
+
+  const navigation = useNavigation()
+
+  const handleLogin = () => {
+    navigation.navigate('Login')
+  }
+
   return (
     <>
       <GoBack />
@@ -32,7 +40,7 @@ export const Profile = () => {
           <OptionsSettings name='Service Center'/>
         </ViewOptions>
         <ViewFooter>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleLogin}>
             <Octicons
               name='trash'
               size={38}

@@ -1,5 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import SignUp from '../screens/Auth/SignUp'
+import Login from '../screens/Auth/Login'
 import { Profile } from '../screens/App/Profile'
 import { AddCard } from '../screens/App/AddCard'
 import { DetailsCard } from '../screens/App/DetailsCard'
@@ -10,7 +12,9 @@ const { Navigator, Screen } = createNativeStackNavigator()
 
 export const AppRoutes = () => {
   return (
-    <Navigator initialRouteName='TabRoutes' screenOptions={{headerShown: false}}>
+    <Navigator initialRouteName='Login' screenOptions={{headerShown: false}}>
+      <Screen name="Login" component={Login} />
+      <Screen name="SignUp" component={SignUp} options={{headerShown: false}}/>
       <Screen name="TabRoutes" component={TabRoutes} />
       <Screen name="Profile" component={Profile} />
       <Screen name="AddCard" component={AddCard} />
